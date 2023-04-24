@@ -1,0 +1,180 @@
+プログラミング特講12回
+21T0815M　高瀬春杜　6/30
+
+問題1
+#include <stdio.h>
+int main(){
+    char a[] = "medsys";
+    printf("配列の先頭アドレス=%p\n",&a);
+    printf("学科=%s\n",a);
+    return 0;
+}
+/*
+配列の先頭アドレス=0x16af67394
+学科=medsys
+*/
+
+問題2
+#include <stdio.h>
+void print_n(char *str,int number);
+int main(){
+    char s[300];
+    char *a = s;
+    int n;
+    printf("文字列は？: ");
+    scanf("%s",a);
+    printf("繰り返し回数は？: ");
+    scanf("%d",&n);
+
+    print_n(a,n);
+    return 0;
+}
+void print_n(char *str,int number){
+    int i;
+    for(i=0;i<number;i++){
+        printf("%s",str);
+    }
+    printf("\n");
+    return;
+}
+
+/*
+文字列は？: fdasu
+繰り返し回数は？: 4
+fdasufdasufdasufdasu
+*/
+
+問題3
+#include <stdio.h>
+int count_n(char str[]);
+int main(){
+    char s[300];
+    int c;
+    printf("文字列は？ ");
+    scanf("%s",s);
+    c = count_n(s);
+    printf("文字数は%d個\n",c);
+    return 0;
+
+}
+int count_n(char str[]){
+    int i,count = 0;
+    for(i=0;str[i]!='\0';i++){
+        count += 1;
+    }
+    return count;
+}
+
+/*
+文字列は？ fdsau
+文字数は5個
+*/
+
+問題4
+#include <stdio.h>
+int count_c(char *str,char c);
+int main(){
+    char s[300];
+    char *a;
+    a = s;
+    char x;
+    int count;
+    printf("文字列は？ ");
+    scanf("%s%*c",a);
+    printf("探す文字は？ ");
+    scanf("%c",&x);
+
+    count = count_c(a,x);
+    printf("文字%cは%sの中に%d個あります\n",x,a,count);
+    return 0;
+
+}
+int count_c(char *str,char c){
+    int i;
+    int n=0;
+    while(*str!='\0'){
+        if(*str == c){
+            n += 1;
+        }
+        str++;
+    }
+    return n;
+}
+
+/*
+文字列は？ mfdiasoigusdlau
+探す文字は？ u
+文字uはmfdiasoigusdlauの中に2個あります
+*/
+
+問題5
+#include <stdio.h>
+void reverse(char *str);
+int count_n(char *str2);
+int main(){
+    char s[300];
+    char *a;
+    a = s;
+    printf("文字列は？ ");
+    scanf("%s",a);
+    reverse(a);
+    printf("\n");
+    return 0;
+
+}
+int count_n(char *str2){
+    int i,count=0;
+    while(*str2!='\0'){
+        count++;
+        str2++;
+    }
+    return count;
+}
+void reverse(char *str){
+    int i,n;
+    n = count_n(str);
+    for(i=0;i<=n;i++){
+        printf("%c",*(str+n-i));
+    }
+
+}
+
+/*
+文字列は？ sjdfaiu
+uiafdjs
+*/
+
+問題6
+#include <stdio.h>
+int compare(char *str1,char *str2);
+int main(){
+    int n;
+    char s[300],g[300];
+    char *a,*b;
+    a = s;
+    b = g;
+    printf("1つ目の文字列は？ ");
+    scanf("%s%*c",a);
+    printf("2つ目の文字列は？ ");
+    scanf("%s%*c",b);
+    n = compare(a,b);
+    printf("%d\n",n);
+    return 0;
+    
+}
+int compare(char *str1,char *str2){
+    int swch=1;
+    while(*str1!='\0'){
+        if(*str1 != *str2){
+            swch = 0;
+        }
+        str1++;
+        str2++;
+    }
+    return swch;
+}
+/*
+1つ目の文字列は？ HarutoTakase
+2つ目の文字列は？ harutotakase
+0
+*/

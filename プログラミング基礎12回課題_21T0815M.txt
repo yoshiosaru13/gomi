@@ -1,0 +1,127 @@
+プログラミング基礎12回課題
+21T0815M 高瀬春杜 6/30
+問題1
+#include <stdio.h>
+int main(){
+    int x;
+    x = 2192;
+    printf("変数の値は%dです.\n",x);
+    return 0;
+}
+ 
+/*変数の値は2192です.*/
+ 
+問題2
+#include <stdio.h>
+int main(){
+    int a, b, seki;
+    printf("2つの整数値を入力して下さい.\n");
+    printf("整数a: "); scanf("%d",&a);
+    printf("整数b: "); scanf("%d",&b);
+    seki = a * b;
+    printf("2つの整数値の積は%dです.\n",seki);
+    return 0;
+ 
+}
+/*2つの整数値を入力して下さい.
+整数a: 4
+整数b: 3
+2つの整数値の積は12です.*/
+ 
+問題3
+#include <stdio.h>
+int main(){
+    int a, b, wariai;
+    printf("2つの整数値を入力して下さい.\n");
+    printf("整数a: "); scanf("%d",&a);
+    printf("整数b: "); scanf("%d",&b);
+    wariai = (a * 100) / b;
+    printf("aはbの%d%%です.\n",wariai);
+    return 0;
+}
+/*2つの整数値を入力して下さい.
+整数a: 43
+整数b: 92
+aはbの46%です.*/
+ 
+問題4
+#include <stdio.h>
+int main(){
+    double cm;
+    printf("長さをcmで入力して下さい: ");
+    scanf("%lf",&cm);
+    printf("それは%fインチです.\n",cm / 2.54);
+    return 0;
+}
+/*長さをcmで入力して下さい: 54
+それは21.259843インチです.*/
+ 
+問題5
+#include <stdio.h>
+int main(){
+    int x;
+    printf("整数値を入力して下さい: ");
+    scanf("%d",&x);
+    if(x % 10 != 0){
+        printf("%dは10の倍数ではありません.\n",x);
+    }
+    else{
+        printf("%dは10の倍数です.\n",x);
+    }
+    return 0;
+}
+/*整数値を入力して下さい: 1340
+1340は10の倍数です.*/
+ 
+問題6
+#include <stdio.h>
+int main(){
+    int x,i;
+    printf("整数値を入力して下さい: ");
+    scanf("%d",&x);
+    for(i=1;i<=x;i++){
+        printf("%d ",i);
+    }
+    printf("\n");
+    return 0;
+}
+/*整数値を入力して下さい: 10
+1 2 3 4 5 6 7 8 9 10 */
+ 
+問題7
+#include <stdio.h>
+int main(){
+    int n,i,j,k;
+    printf("ピラミッドの段数を入力して下さい: ");
+    scanf("%d",&n);
+    for(i=0;i<n+1;i++){
+        for(j=0;j<n-i;j++){
+            printf(" ");
+        }
+        for(k=0;k<i*2-1;k++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+ 
+}
+/*ピラミッドの段数を入力して下さい: 5
+     
+    *
+   ***
+  *****
+ *******
+*********
+*/
+ 
+問題8
+#include <stdio.h>
+int main(){
+    int i;
+    int a[5] = {5,4,3,2,1};
+    for(i=0;i<5;i++){
+        printf("a[%d] = %d\n",i,a[i]);
+    }
+    return 0;
+}
